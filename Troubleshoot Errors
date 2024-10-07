@@ -1,0 +1,6 @@
+issues:
+errror:1:
+couldn't get current server API group list: the server has asked for the client to provide credentials
+Solution:
+https://repost.aws/knowledge-center/eks-api-server-unauthorized-error
+https://stackoverflow.com/questions/75406313/couldnt-get-current-server-api-group-list-the-server-has-asked-for-the-client
