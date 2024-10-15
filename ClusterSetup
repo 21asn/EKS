@@ -12,3 +12,18 @@ eksctl create cluster \
 
 eksctl delete cluster --name my-cluster --region us-east-1
 [This command will delete both the control plane (EKS master) and all node groups associated with the cluster, effectively removing the entire cluster from your account.]
+
+
+eksctl create cluster \
+  --name jenk-poc\
+  --version 1.30 \
+  --region us-east-1 \
+  --nodegroup-name private-workers \
+  --node-type t3.medium \
+  --nodes 3 \
+  --nodes-min 2 \
+  --nodes-max 4 \
+  --managed \
+  --vpc-private-subnets subnet-0e558920a2b805a7f,subnet-07b70458a1e90f658,subnet-0bf69a7a22a445997,subnet-0213fe32b2341360b \
+  --vpc-cidr 172.19.0.0/16 \
+  --without-nodegroup
