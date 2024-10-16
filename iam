@@ -3,3 +3,6 @@ create  IAM Profile:
 aws configure --profile your-profile-name
 
 export AWS_PROFILE=your-profile-name
+
+
+aws configure list-profiles
