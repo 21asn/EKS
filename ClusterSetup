@@ -28,10 +28,8 @@ eksctl create cluster \
   --vpc-cidr 172.19.0.0/16 \
   --without-nodegroup
 
-
-
 eksctl create cluster \
-  --name jenk-poc\
+  --name jenknew-poc \
   --version 1.30 \
   --region us-east-1 \
   --nodegroup-name private-workers \
@@ -42,3 +40,18 @@ eksctl create cluster \
   --managed \
   --vpc-cidr 172.19.0.0/16 \
   --without-nodegroup
+
+
+
+eksctl create nodegroup \
+  --cluster your-cluster-name \
+  --name private-workers \
+  --node-type t3.medium \
+  --nodes 3 \
+  --nodes-min 2 \
+  --nodes-max 4 \
+  --node-private-networking \
+  --subnet-ids subnet-xxxxxxxx,subnet-xxxxxxxx \
+  --region us-east-1 \
+  --managed
+
